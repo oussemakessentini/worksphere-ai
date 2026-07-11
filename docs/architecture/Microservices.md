@@ -65,6 +65,44 @@ None.
 None.
 
 ---
+## 2.3 Configuration Service
+
+### Responsibilities
+
+- Centralize configuration for all microservices
+- Provide environment-specific configuration
+- Manage shared properties
+- Reduce duplicated configuration
+- Allow configuration changes without rebuilding every service
+- Support development, test, staging, and production environments
+
+### Technology
+
+- Spring Cloud Config Server
+- Git-backed configuration repository
+
+### Owns Data
+
+The Configuration Service does not own business data.
+
+It reads configuration files from a dedicated Git repository or configuration directory.
+
+### Example Configuration Repository
+
+```text
+worksphere-config/
+├── application.yml
+├── identity-service.yml
+├── talent-service.yml
+├── workforce-service.yml
+├── learning-service.yml
+├── engagement-service.yml
+├── api-gateway.yml
+├── identity-service-dev.yml
+├── identity-service-prod.yml
+└── api-gateway-prod.yml
+
+````
 
 ## 2.3 Identity Service
 
